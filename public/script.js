@@ -10,34 +10,53 @@ const fetchCountry = () => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+
+      
       data.data.forEach((country) => {
+        fetch(`https://pixabay.com/api/?key=22301802-11605c9e4ad78b4a7f14649b5&q=${country.location}`)
+        .then(response => response.json())
+        .then(dato => {
+          console.log('Success:', dato);
         const img = `<div class = "Countries">
-        <h4>${country.location}</h4><h4>${country.data}</h4></div>`;
+        <h4>${country.location}</h4><img src='${dato.hits[1].webformatURL}' width='300px' height='300px'/><h4>${country.data}</h4></div>`;
 
         mainContainer.insertAdjacentHTML("beforeend", img);
       });
     });
-};
+});
+}
 const searchCountry = (pays) => {
   mainContainer.innerHTML = "";
   fetch("https://www.trackcorona.live/api/travel")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      data.data.forEach((country) => {
-        const img = `<div class = "Countries">
-        <h4>${country.location}</h4><h3>${country.data}</h3></div>
-        <button id="add_btn">Add to my wish list</button>`;
-        if(pays == country.location) {
 
-          mainContainer.insertAdjacentHTML("beforeend", img);
-          addCountry();
-          // getCountryFromDB();
+      fetch(`https://pixabay.com/api/?key=22301802-11605c9e4ad78b4a7f14649b5&q=${pays}`)
+      .then(response => response.json())
+      .then(dato => {
+        console.log('Success:', dato);
+   
+        
+        data.data.forEach((country) => {
           
-          
-        }
-      });
-    });
+            const img = `<div class = "Countries">
+            <h4>${country.location}</h4><img src='${dato.hits[1].webformatURL}' width='300px' height='300px'/><h3>${country.data}</h3></div>
+            <button id="add_btn">Add to my wish list</button>`;
+            if(pays == country.location) {
+              
+              mainContainer.insertAdjacentHTML("beforeend", img);
+              addCountry();
+              // getCountryFromDB();
+            
+            }
+          })
+            
+            
+        });
+      })
+      
+    
 }
 const addToWishList = () => {
   fetch('api/countries', {
@@ -180,3 +199,20 @@ fetchCountry();
 // Try to match the picture with the country
 
 addToWishList();
+
+
+ 
+      // fetch("https://pixabay.com/api/?key=22301802-11605c9e4ad78b4a7f14649b5&q=belgium")
+      // .then(response => response.json())
+      // .then(data => {
+      //   console.log('Success:', data);
+      //   console.log(data.hits[1].pageURL)
+        
+      // })
+      // .catch((error) => {
+      //   console.error('Error:', error);
+      // });
+    
+
+
+
