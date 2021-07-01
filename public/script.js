@@ -18,7 +18,7 @@ const fetchCountry = () => {
         .then(dato => {
           console.log('Success:', dato);
         const img = `<div class = "Countries">
-        <h4>${country.location}</h4><img src='${dato.hits[1].webformatURL}' width='300px' height='300px'/><h4>${country.data}</h4></div>`;
+        <h3 align='center' margin-top='50px'>${country.location}</h3><img src='${dato.hits[1].webformatURL}' width='300px' height='300px'/><h4>${country.data}</h4></div>`;
 
         mainContainer.insertAdjacentHTML("beforeend", img);
       });
@@ -41,7 +41,7 @@ const searchCountry = (pays) => {
         data.data.forEach((country) => {
           
             const img = `<div class = "Countries">
-            <h4>${country.location}</h4><img src='${dato.hits[1].webformatURL}' width='300px' height='300px'/><h3>${country.data}</h3></div>
+            <h3 align='center' margin-top='50px'>${country.location}</h3><img src='${dato.hits[1].webformatURL}' width='300px' height='300px'/><h4>${country.data}</h4></div>
             <button id="add_btn">Add to my wish list</button>`;
             if(pays == country.location) {
               

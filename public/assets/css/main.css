@@ -95,6 +95,16 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+#work img {
+  width: 400px;
+  margin-left: 150px;
+  justify-content: center;
+  border-radius: 10px;
+
+}
+.countries {
+  text-align: center;
+}
 
 article,
 aside,
