@@ -98,12 +98,17 @@ video {
 #work img {
   width: 400px;
   margin-left: 150px;
-  justify-content: center;
+  
   border-radius: 10px;
 
 }
 .countries {
   text-align: center;
+}
+#globe {
+  width: 30px;
+  height: 30px;
+  size: 7px;
 }
 
 article,
@@ -1432,6 +1437,10 @@ body.is-preload #bg:before {
   line-height: 5.5rem;
   border: solid 1px #ffffff;
   border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 #header .logo .icon:before {

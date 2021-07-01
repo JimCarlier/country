@@ -50,6 +50,7 @@ const searchCountry = (pays) => {
               // getCountryFromDB();
             
             }
+            
           })
             
             
@@ -171,12 +172,17 @@ const addCountry = () => {
         console.error("Error:", error);
       });
       addToWishList();
+      fetchCountry();
   })
   
 
 }
 
-
+const returnBtn = document.querySelector('#return');
+returnBtn.addEventListener('click', (event)=> {
+  mainContainer.innerHTML = ''
+  fetchCountry()
+})
 
 searchBtn.addEventListener("click", (event) => {
   console.log(countryInput.value);
