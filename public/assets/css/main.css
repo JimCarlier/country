@@ -95,13 +95,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-#work img {
-  width: 400px;
-  margin-left: 150px;
-  
-  border-radius: 10px;
 
-}
 .countries {
   text-align: center;
 }
@@ -186,6 +180,11 @@ textarea {
   body {
     min-width: 320px;
   }
+  #work img {
+    width: 66vw;
+    margin-left: 4vw;
+    border-radius: 10px;
+  }
 }
 
 html {
@@ -221,21 +220,48 @@ html {
   font-size: 16pt;
 }
 
-@media screen and (max-width: 1680px) {
+@media screen and (min-width: 737px) and (max-width: 1680px) {
   html {
     font-size: 12pt;
   }
+  #work img {
+    width: 30vw;
+    margin-left: 3vw;
+    border-radius: 10px;
+  
+  }
+}
+@media screen and (min-width: 1681px) {
+  #work img {
+    width: 37vw;
+   
+    border-radius: 10px;
+  
+  }
 }
 
-@media screen and (max-width: 736px) {
+@media screen and (min-width: 481px) and (max-width: 736px) {
   html {
     font-size: 11pt;
+  }
+  #work img {
+    width: 52vw;
+    margin-left: 10vw;
+    border-radius: 10px;
+  
   }
 }
 
 @media screen and (max-width: 360px) {
   html {
     font-size: 10pt;
+  }
+  #work img {
+    width: 15vw;
+    margin-left: 5vw;
+    
+    border-radius: 10px;
+  
   }
 }
 
